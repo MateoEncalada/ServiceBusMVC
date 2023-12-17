@@ -1,0 +1,35 @@
+﻿@model List<String>
+
+<h1 style="text-align: center; color: chocolate">
+    Azure Service Bus
+</h1>
+
+<hr />
+
+<form method="post" style="margin: 0 auto; text-align: center">
+    <label>Introduzca un mensaje:</label>
+    <textarea name="mensaje" class="form-control"></textarea>
+    <br />
+    <button type="submit" class="btn btn-outline-info" name="accion" value="enviar">
+        Enviar Mensaje
+    </button>
+    &nbsp;&nbsp;
+    <button type="submit" class="btn btn-outline-info" name="accion" value="recibir">
+        Recibir mensajes
+    </button>
+</form>
+
+<hr />
+
+@if (Model != null)
+{
+        <ul class="list-group">
+        @foreach (string msj in Model)
+        {
+                    <li class="list-group-item list-group-item-warning">
+                @msj
+                    </li>
+        }
+        </ul>
+}
+
